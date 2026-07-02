@@ -31,5 +31,5 @@ cd App
 3. Execute o aplicativo:
 
 ```bash
-python main.py
+python Source/Core/main.py
 ```
