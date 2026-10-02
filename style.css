@@ -10,6 +10,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 html {
     font-size: 62.5%;
 }
@@ -18,6 +19,8 @@ body {
     background-color: var(--primary-color);
     font: bold 2rem 'Open Sans', sans-serif;
 }
+
+/* TODO */
 
 .todo {
     display: flex;
@@ -28,85 +31,179 @@ body {
     gap: 15px;
 }
 
+/* TÍTULO */
+
 .todo__title {
     display: flex;
     background-color: var(--secondary-color);
     width: 100%;
-    height: 80px;
+    min-height: 80px;
+
     justify-content: center;
     align-items: center;
+
     margin-top: 50px;
+
     box-shadow: 1px 1px 5px var(--secondary-color);
+
     font-size: 3rem;
     color: var(--primary-color);
 }
 
+/* LISTA */
+
 .todo__list {
     display: flex;
     width: 100%;
+
     flex-direction: column;
+
     gap: 10px;
 }
 
-.todo__item{
+/* ITEM DA TAREFA */
+
+.todo__item {
     display: flex;
+
     width: 100%;
-    height: 60px;
+
+    /* Permite que a tarefa cresça conforme o texto */
+    min-height: 60px;
+    height: auto;
+
     justify-content: space-between;
     align-items: center;
-    padding: 5px;
+
+    padding: 10px;
+
     box-shadow: 1px 1px 5px var(--secondary-color);
+
+    /* Impede o conteúdo de sair do quadrado */
+    overflow: hidden;
 }
+
+/* TEXTO DA TAREFA */
+
 .todo__item > div {
     width: 80%;
+
+    /* Permite quebrar textos grandes */
+    overflow-wrap: anywhere;
+    word-break: break-word;
+
+    /* Permite várias linhas */
+    white-space: normal;
 }
+
+/* EFEITO AO PASSAR O MOUSE */
+
 .todo__item:hover {
     cursor: pointer;
+
     transition: all .5s ease;
+
     background-color: var(--secondary-color);
     color: var(--primary-color);
 }
 
+/* INPUT DE EDIÇÃO */
 
 .todo__item > input[type='text'] {
     border: none;
+
     width: 80%;
+
     font: inherit;
+
+    background-color: transparent;
+
+    outline: none;
+
+    /* Texto grande quebra */
+    overflow-wrap: anywhere;
 }
+
+/* BOTÃO E CHECKBOX */
 
 .todo__item > input[type='button'],
 .todo__item > input[type='checkbox'] {
     width: 30px;
     height: 30px;
+
     font: inherit;
+
+    flex-shrink: 0;
 }
 
+/* TAREFA CONCLUÍDA */
 
-.todo__item > input[type='checkbox']:checked  + div {
-    text-decoration:line-through;
+.todo__item > input[type='checkbox']:checked + div {
+    text-decoration: line-through;
 }
 
-.todo__new-item{
+/* NOVA TAREFA */
+
+.todo__new-item {
     display: flex;
+
     background-color: #fff59d;
+
     width: 100%;
-    height: 70px;
+    min-height: 70px;
+    height: auto;
+
     justify-content: space-evenly;
+    align-items: center;
+
     padding: 10px 0;
+
     box-shadow: 1px 1px 5px var(--secondary-color);
+
     margin: 10px;
+
     font: inherit;
 }
 
-.todo__new-item > input{
+/* INPUT PARA DIGITAR */
+
+.todo__new-item > input {
     background-color: #fff59d;
+
     border: none;
+
     width: 80%;
+
+    min-width: 0;
+
     outline: none;
+
     font: inherit;
 }
+
+/* PLACEHOLDER */
 
 .todo__new-item > input::placeholder {
     font-style: italic;
     font-weight: normal;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 700px) {
+    .todo {
+        width: 90vw;
+    }
+
+    .todo__title {
+        font-size: 2.5rem;
+    }
+
+    .todo__item > div {
+        width: 75%;
+    }
+
+    .todo__item > input[type='text'] {
+        width: 75%;
+    }
 }
