@@ -1,5 +1,4 @@
 
-
 :root {
     --primary-color: #F4CE01;
     --secondary-color: #0F0F0B;
@@ -12,15 +11,14 @@
 }
 
 html {
-    font-size: 62.5%;
+    font-size: 72.5%;
 }
 
 body {
-    background-color: var(--primary-color);
+    background-color: grey;
     font: bold 2rem 'Open Sans', sans-serif;
 }
 
-/* TODO */
 
 .todo {
     display: flex;
@@ -31,11 +29,10 @@ body {
     gap: 15px;
 }
 
-/* TÍTULO */
 
 .todo__title {
     display: flex;
-    background-color: var(--secondary-color);
+    background-color: black;
     width: 100%;
     min-height: 80px;
 
@@ -47,10 +44,9 @@ body {
     box-shadow: 1px 1px 5px var(--secondary-color);
 
     font-size: 3rem;
-    color: var(--primary-color);
+    color: white;
 }
 
-/* LISTA */
 
 .todo__list {
     display: flex;
@@ -61,7 +57,6 @@ body {
     gap: 10px;
 }
 
-/* ITEM DA TAREFA */
 
 .todo__item {
     display: flex;
@@ -83,7 +78,6 @@ body {
     overflow: hidden;
 }
 
-/* TEXTO DA TAREFA */
 
 .todo__item > div {
     width: 80%;
@@ -96,7 +90,6 @@ body {
     white-space: normal;
 }
 
-/* EFEITO AO PASSAR O MOUSE */
 
 .todo__item:hover {
     cursor: pointer;
@@ -106,8 +99,6 @@ body {
     background-color: var(--secondary-color);
     color: var(--primary-color);
 }
-
-/* INPUT DE EDIÇÃO */
 
 .todo__item > input[type='text'] {
     border: none;
@@ -124,7 +115,6 @@ body {
     overflow-wrap: anywhere;
 }
 
-/* BOTÃO E CHECKBOX */
 
 .todo__item > input[type='button'],
 .todo__item > input[type='checkbox'] {
@@ -136,18 +126,14 @@ body {
     flex-shrink: 0;
 }
 
-/* TAREFA CONCLUÍDA */
 
 .todo__item > input[type='checkbox']:checked + div {
     text-decoration: line-through;
 }
 
-/* NOVA TAREFA */
 
 .todo__new-item {
     display: flex;
-
-    background-color: #fff59d;
 
     width: 100%;
     min-height: 70px;
@@ -165,11 +151,8 @@ body {
     font: inherit;
 }
 
-/* INPUT PARA DIGITAR */
 
 .todo__new-item > input {
-    background-color: #fff59d;
-
     border: none;
 
     width: 80%;
@@ -180,15 +163,6 @@ body {
 
     font: inherit;
 }
-
-/* PLACEHOLDER */
-
-.todo__new-item > input::placeholder {
-    font-style: italic;
-    font-weight: normal;
-}
-
-/* RESPONSIVIDADE */
 
 @media (max-width: 700px) {
     .todo {
